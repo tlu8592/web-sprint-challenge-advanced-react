@@ -13,12 +13,12 @@ test("renders without errors", () => {
 test("shows success message on submit with form details", () => {
     render(<CheckoutForm />);
 
-    const firstnameInput = screen.getByLabelText(/first name:/i);
-    const lastnameInput = screen.getByLabelText(/last name:/i);
-    const addressInput = screen.getByLabelText(/address:/i);
-    const cityInput = screen.getByLabelText(/city:/i);
-    const stateInput = screen.getByLabelText(/state:/i);
-    const zipInput = screen.getByLabelText(/zip:/i);
+    const firstnameInput = screen.getByLabelText(/first name/i);
+    const lastnameInput = screen.getByLabelText(/last name/i);
+    const addressInput = screen.getByLabelText(/address/i);
+    const cityInput = screen.getByLabelText(/city/i);
+    const stateInput = screen.getByLabelText(/state/i);
+    const zipInput = screen.getByLabelText(/zip/i);
     const checkoutButton = screen.getByRole('button');
 
     userEvent.type(firstnameInput, 'Tony');
@@ -31,5 +31,4 @@ test("shows success message on submit with form details", () => {
 
     const successMessageDisplay = screen.getByTestId('successMessage');
     expect(successMessageDisplay).toBeInTheDocument();
-    expect(successMessageDisplay).toBeTruthy();
 });
