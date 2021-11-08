@@ -1,6 +1,6 @@
 import React from "react";
 import MutationObserver from 'mutationobserver-shim';
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
 import userEvent from '@testing-library/user-event';
 
@@ -31,4 +31,5 @@ test("shows success message on submit with form details", () => {
 
     const successMessageDisplay = screen.getByTestId('successMessage');
     expect(successMessageDisplay).toBeInTheDocument();
+    expect(successMessageDisplay).toBeTruthy();
 });
